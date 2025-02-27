@@ -13,7 +13,7 @@ public class graphic_interface {
     private JTextField clientName;
     private JButton bookButton;
     private JButton searchAlternativeButton;
-    private JTextArea table1Table2TextArea1;
+    private JTextArea table;
     private JTextArea tableBooked;
     private JLabel name;
     private JLabel stablishment;
@@ -28,7 +28,25 @@ public class graphic_interface {
         tableBooked.setVisible(false); //The booked message is hidden
         no_options.setVisible(true); //The "No Options Available" message is hidden
 
-        bookButton.addActionListener(new ActionListener() { //If we book a table (= button is pressed)
+        //When we select a restaurant in the JComboBox, the tables in that restaurant are shown in the JTextArea (table) inside the JScrollPanel
+        if(selectRestaurant.getSelectedIndex() == 0){
+            table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n");
+        }
+        else if(selectRestaurant.getSelectedIndex() == 1){
+            table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n");
+        }
+        else if(selectRestaurant.getSelectedIndex() == 2){
+            table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - \n");
+        }
+        else if(selectRestaurant.getSelectedIndex() == 3){
+            table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - \n Table 7 - \n");
+        }
+        else if(selectRestaurant.getSelectedIndex() == 4){
+            table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - ");
+        }
+
+        //If we book a table (= button is pressed)
+        bookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 tableBooked.setVisible(true); //The booked message is shown when you click the book button
@@ -59,8 +77,6 @@ public class graphic_interface {
             }
         });
 
-
-
         searchAlternativeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,14 +86,15 @@ public class graphic_interface {
             }
         });
 
-        if(tableSuggested.getText().trim().isEmpty()){ //If there isn´t any table available
+        //If there isn´t any table available
+        if(tableSuggested.getText().trim().isEmpty()){
             searchAlternativeButton.setVisible(false);  //Disable the search alternative button
         }
 
-        if(table1Table2TextArea1.getText().trim().isEmpty()){ //If the JTextArea where the tables are shown is empty (there are no available tables)
+        //If the JTextArea where the tables are shown is empty (there are no available tables)
+        if(table.getText().trim().isEmpty()){
             bookButton.setVisible(false);   //Disable the Book Button
         }
-
 
         searchAlternativeButton.addActionListener(new ActionListener() {
             @Override
@@ -94,6 +111,7 @@ public class graphic_interface {
                 }
             }
         });
+
     }
 
     public static void main(String[] args) {
@@ -101,7 +119,7 @@ public class graphic_interface {
         frame.setContentPane(new graphic_interface().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        frame.setLocationRelativeTo(null); //We start it in the center, not relative to any margin
+        frame.setVisible(true); //We pake the main panel visible
     }
 }
