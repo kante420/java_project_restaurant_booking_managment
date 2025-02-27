@@ -79,6 +79,21 @@ public class graphic_interface {
         }
 
 
+        searchAlternativeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int actual_position = selectRestaurant.getSelectedIndex(); //Store the actual position
+                int total_positions = selectRestaurant.getItemCount(); //Store the amount of positions
+                int result = (actual_position + 1) % total_positions;   //Calculate if we are in the last position or in one between [0, n-1]
+
+                if(result == 0){ //If we are in a position between [0, n-1]
+                    selectRestaurant.setSelectedIndex(actual_position + 1); //Go to the next position
+                }
+                else if(result == 1){ //If we are in position n (last position)
+                    selectRestaurant.setSelectedIndex(0); //Go back to position 0
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
