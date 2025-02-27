@@ -22,7 +22,6 @@ public class graphic_interface {
     private JLabel no_options;
     private JLabel tables;
 
-
     public graphic_interface() {
 
         tableBooked.setVisible(false); //The booked message is hidden
