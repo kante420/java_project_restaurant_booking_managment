@@ -73,6 +73,12 @@ public class graphic_interface {
         if(tableSuggested.getText().trim().isEmpty()){ //If there isn´t any table available
             searchAlternativeButton.setVisible(false);  //Disable the search alternative button
         }
+
+        if(table1Table2TextArea1.getText().trim().isEmpty()){ //If the JTextArea where the tables are shown is empty (there are no available tables)
+            bookButton.setVisible(false);   //Disable the Book Button
+        }
+
+
     }
 
     public static void main(String[] args) {
