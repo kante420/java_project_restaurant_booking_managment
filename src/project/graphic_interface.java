@@ -21,6 +21,7 @@ public class graphic_interface {
     private JLabel suggested;
     private JLabel no_options;
     private JLabel tables;
+    private JScrollPane scrollPanel;
 
     public graphic_interface() {
 
@@ -30,18 +31,28 @@ public class graphic_interface {
         //When we select a restaurant in the JComboBox, the tables in that restaurant are shown in the JTextArea (table) inside the JScrollPanel
         if(selectRestaurant.getSelectedIndex() == 0){
             table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n");
+            scrollPanel.setMinimumSize(scrollPanel.getPreferredSize());
+            table.setMinimumSize(scrollPanel.getPreferredSize());
         }
         else if(selectRestaurant.getSelectedIndex() == 1){
             table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n");
+            scrollPanel.setMinimumSize(scrollPanel.getPreferredSize());
+            table.setMinimumSize(scrollPanel.getPreferredSize());
         }
         else if(selectRestaurant.getSelectedIndex() == 2){
             table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - \n");
+            scrollPanel.setMinimumSize(scrollPanel.getPreferredSize());
+            table.setMinimumSize(scrollPanel.getPreferredSize());
         }
         else if(selectRestaurant.getSelectedIndex() == 3){
             table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - \n Table 7 - \n");
+            scrollPanel.setMinimumSize(scrollPanel.getPreferredSize());
+            table.setMinimumSize(scrollPanel.getPreferredSize());
         }
         else if(selectRestaurant.getSelectedIndex() == 4){
             table.setText("Table 1 - \n Table 2 - \n Table 3 - \n Table 4 - \n Table 5 - \n Table 6 - ");
+            scrollPanel.setMinimumSize(scrollPanel.getPreferredSize());
+            table.setMinimumSize(scrollPanel.getPreferredSize());
         }
 
         //If we book a table (= button is pressed)

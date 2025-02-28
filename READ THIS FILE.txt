@@ -1,0 +1,5 @@
+I have written posible code for the following action:
+
+When I select the restaurant that I want at the JComboBox, I want the corresponding tables for that restaurant to be shown. For example, if restaurant 1 has 6 tables, I want the 6 tables to be shown in the JTextArea called "table" and if I change to restaurant 5 and it has 7 tables, I want the JTextArea "table" to change and show the corresponding tables.
+
+I have written a posible solution using conditional if(s) but I don´t think it is corresct, because it´s not working.
