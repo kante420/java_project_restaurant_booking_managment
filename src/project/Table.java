@@ -1,11 +1,15 @@
 package project;
 
 public class Table {
-    private int identifier;
+    private final int identifier; //It´s a final because the identifier of a table is not going to change
     private String client_name;
     private int diners;
 
-    //Constructor to initialize the ID of the table
+
+    /**
+     *Constructor that initialized the ID of the table
+     * @param identifier of the table
+     */
     public Table(int identifier){
         this.identifier = identifier;
         this.client_name = null;
