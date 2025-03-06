@@ -1,58 +1,55 @@
 package project;
 
 public class Table {
-    private final int identifier; //It´s a final because the identifier of a table is not going to change
-    private String client_name;
-    private int diners;
+    static final int capacity = 6;
+    private boolean isOccupied;
+    private int occupiedSeats;
+    private String reservationName;
 
-
-    /**
-     *Constructor that initialized the ID of the table
-     * @param identifier of the table
-     */
-    public Table(int identifier){
-        this.identifier = identifier;
-        this.client_name = null;
-        this.diners = 0;
+    //Constructor that initializes the table as unoccupied and with zero occupied seats
+    public Table() {
+        isOccupied = false;
+        occupiedSeats = 0;
+        reservationName = "";
     }
 
-    //Getters
-    public int getIdentifier() {
-        return identifier;
+    //Getters and Setters
+    public boolean getIsOccupied() {
+        return isOccupied;
     }
-    public String getClient_name() {
-        return client_name;
+    public void setIsOccupied(boolean isOccupied) {
+        this.isOccupied = isOccupied;
     }
-    public int getDiners() {
-        return diners;
+    public int getOccupiedSeats() {
+        return occupiedSeats;
+    }
+    public void setOccupiedSeats(int occupiedSeats) {
+        this.occupiedSeats = occupiedSeats;
+    }
+    public String getReservationName() {
+        return reservationName;
+    }
+    public void setReservationName(String reservationName) {
+        this.reservationName = reservationName;
     }
 
-    //Setters - In the case it´s needed, data could be modified
-    public void setClient_name(String client_name) {
-        this.client_name = client_name;
+    //Method to check is the table is occupied
+    public boolean isOccupied() {
+        return isOccupied;
     }
-    public void setDiners(int diners) {
-        if(diners >= 2){
-            this.diners = diners;
+
+    //Method to reserve a table
+    public void reserve(int numberOfPeople, String reservationName) {
+        if(numberOfPeople >= 2 & numberOfPeople <= capacity) {
+            this.reservationName = reservationName;
+            this.isOccupied = true;
+            this.occupiedSeats = numberOfPeople;
+            //Ask if all the tables have the same capacity (6 people) in order to modify
         }
     }
 
-    //Method to asign the table to someone
-    public void setData(String client_name, int diners) {
-        if(diners < 2){
-            System.out.println("Invalid number of diners. Please, at least two.");
-        }
-        this.client_name = client_name;
-        this.diners = diners;
-    }
-
-    //Method to know is the table is available
-    public boolean isAvailable(){
-        if(this.client_name == null){
-            return true;
-        }
-        else{
-            return false;
-        }
+    //To string method
+    public String toString(){
+        return "Name: " + reservationName + ", Number of Dinners: " + occupiedSeats;
     }
 }
