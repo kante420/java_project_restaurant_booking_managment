@@ -44,7 +44,6 @@ public class Table {
             this.reservationName = reservationName;
             this.isOccupied = true;
             this.occupiedSeats = numberOfPeople;
-            //Ask if all the tables have the same capacity (6 people) in order to modify
         }
     }
 
