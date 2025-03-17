@@ -1,7 +1,7 @@
 package project;
 
-public class Restaurant {
-    private final int additionalTables;
+public class Restaurant extends Table{
+    private final int additionalTables = 2;
     private int availableTables;
     private int currentTableIndex;
     private String name;
@@ -12,7 +12,16 @@ public class Restaurant {
     public Restaurant(String name, int totalTables){
         this.name = name;
         this.totalTables = totalTables + additionalTables;
-        //Review
+        this.copy_totalTables = this.totalTables;
+        //And creates a Table object for each table slot
+    }
+
+    private int copy_totalTables;
+
+    //Inizialization of the Table Array
+    tables = new Table[copy_totalTables];
+    for(int i=0; i<copy_totalTables;i++){
+        tables[i] = null;
     }
 
     //Getters and Setters
@@ -49,8 +58,62 @@ public class Restaurant {
 
     //Method to reserve a table
     public boolean reserveTable(int numberOfPeople, String reservationName){
-        double divison_tables_float = numberOfPeople / 6;
-        int division_tables_int = numberOfPeople / 6;
+        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+
+        if(tables_needed <= availableTables){
+            if(tables_needed <= 1){
+                for(int i=0; i<copy_totalTables; i++){
+                    if(tables[i] == null){
+                        tables[i] = numberOfPeople;
+                        availableTables--;
+                        return true;
+                        break;
+                    }
+                }
+            }
+            else{
+                int people_last_table = numberOfPeople - ((tables_needed - 1)*6);
+                int counter = 0;
+                for(int i=0; i<copy_totalTables; i++){
+                    if(tables[i] == null){
+                        if(counter < tables_needed){
+                            if(counter == tables_needed-1){
+                                tables[i] = people_last_table;
+                                availableTables -= tables_needed;
+                                return true;
+                                break
+                            }
+                            tables[i] = 6;
+                            counter++;
+
+                        }
+                    }
+                }
+            }
+
+        }
+        else{
+            return false;
+        }
     }
+
+    //Get Name Method
+    public String getName(){
+        return name;
+    }
+
+    //Method to check is there are available tables
+    public boolean hasAvailableTables(int numberOfPeople){
+        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+
+        if(tables_needed <= availableTables){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
 
 }

@@ -33,11 +33,6 @@ public class Table {
         this.reservationName = reservationName;
     }
 
-    //Method to check is the table is occupied
-    public boolean isOccupied() {
-        return isOccupied;
-    }
-
     //Method to reserve a table
     public void reserve(int numberOfPeople, String reservationName) {
         if(numberOfPeople >= 2 & numberOfPeople <= capacity) {
@@ -47,8 +42,18 @@ public class Table {
         }
     }
 
+    //Method to check is the table is occupied
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
     //To string method
     public String toString(){
-        return "Name: " + reservationName + ", Number of Dinners: " + occupiedSeats;
+        if(isOccupied==true){
+            return "Name: " + reservationName + ", Number of Dinners: " + occupiedSeats;
+        }
+        else if(isOccupied==false){
+            return "Available";
+        }
     }
 }
