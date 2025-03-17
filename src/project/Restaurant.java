@@ -66,6 +66,7 @@ public class Restaurant extends Table{
                     if(tables[i] == null){
                         tables[i] = numberOfPeople;
                         availableTables--;
+                        currentTableIndex = i+1;
                         return true;
                         break;
                     }
@@ -80,6 +81,7 @@ public class Restaurant extends Table{
                             if(counter == tables_needed-1){
                                 tables[i] = people_last_table;
                                 availableTables -= tables_needed;
+                                currentTableIndex = i+1;
                                 return true;
                                 break
                             }
@@ -114,6 +116,21 @@ public class Restaurant extends Table{
         }
     }
 
+    //Available Tables Info Method
+    public String availableTablesInfo (int numberOfPeople){
+        int num_available_tables = copy_totalTables - (currentTableIndex + 1);
+        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+        StringBuilder return_string = new StringBuilder();
+
+        for(int i=currentTableIndex; i < copy_totalTables; i++){
+            if (i == copy_totalTables - 1){
+                return_string.append(" Table " + (i+1) + " Available")
+            }
+            return_string.append(" Table " + (i+1) + " Available / ")
+        }
+
+        return return_string;
+    }
 
 
 }
