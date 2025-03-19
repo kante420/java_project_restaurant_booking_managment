@@ -35,7 +35,7 @@ public class Table {
 
     //Method to reserve a table
     public void reserve(int numberOfPeople, String reservationName) {
-        if(numberOfPeople >= 2 & numberOfPeople <= capacity) {
+        if(numberOfPeople >= 2 && numberOfPeople <= capacity) {
             this.reservationName = reservationName;
             this.isOccupied = true;
             this.occupiedSeats = numberOfPeople;
