@@ -62,32 +62,43 @@ public class Restaurant extends Table{
 
         if(tables_needed <= availableTables){
             if(tables_needed <= 1){
-                for(int i=0; i<copy_totalTables; i++){
-                    if(tables[i] == null){
-                        tables[i] = numberOfPeople;
-                        availableTables--;
-                        currentTableIndex = i+1;
-                        return true;
-                        break;
+                if(currentTableIndex == 6){
+                    return false;
+                }
+                else{
+                    for(int i=0; i<copy_totalTables; i++){
+                        if(tables[i] == null){
+                            tables[i] = numberOfPeople;
+                            availableTables--;
+                            currentTableIndex = i+1;
+                            return true;
+                            break;
+                        }
                     }
                 }
+
             }
             else{
-                int people_last_table = numberOfPeople - ((tables_needed - 1)*6);
-                int counter = 0;
-                for(int i=0; i<copy_totalTables; i++){
-                    if(tables[i] == null){
-                        if(counter < tables_needed){
-                            if(counter == tables_needed-1){
-                                tables[i] = people_last_table;
-                                availableTables -= tables_needed;
-                                currentTableIndex = i+1;
-                                return true;
-                                break
-                            }
-                            tables[i] = 6;
-                            counter++;
+                if(tables_needed > (7-currentTableIndex+1)){
+                    return false;
+                }
+                else{
+                    int people_last_table = numberOfPeople - ((tables_needed - 1)*6);
+                    int counter = 0;
+                    for(int i=0; i<copy_totalTables; i++){
+                        if(tables[i] == null){
+                            if(counter < tables_needed){
+                                if(counter == tables_needed-1){
+                                    tables[i] = people_last_table;
+                                    availableTables -= tables_needed;
+                                    currentTableIndex = i+1;
+                                    return true;
+                                    break
+                                }
+                                tables[i] = 6;
+                                counter++;
 
+                            }
                         }
                     }
                 }
