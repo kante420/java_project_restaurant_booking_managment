@@ -68,7 +68,7 @@ public class Restaurant extends Table{
                 else{
                     for(int i=0; i<copy_totalTables; i++){
                         if(tables[i] == null){
-                            tables[i] = numberOfPeople;
+                            tables[i].reserve(numberOfPeople, reservationName);
                             availableTables--;
                             currentTableIndex = i+1;
                             return true;
@@ -79,7 +79,7 @@ public class Restaurant extends Table{
 
             }
             else{
-                if(tables_needed > (7-currentTableIndex+1)){
+                if(tables_needed > (totalTables-currentTableIndex)){
                     return false;
                 }
                 else{
@@ -89,7 +89,7 @@ public class Restaurant extends Table{
                         if(tables[i] == null){
                             if(counter < tables_needed){
                                 if(counter == tables_needed-1){
-                                    tables[i] = people_last_table;
+                                    tables[i].reserve(numberOfPeople, reservationName);
                                     availableTables -= tables_needed;
                                     currentTableIndex = i+1;
                                     return true;
