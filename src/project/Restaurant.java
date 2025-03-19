@@ -189,5 +189,4 @@ public class Restaurant extends Table{
         return "Error while obtaining the data";
     }
 
-
 }
