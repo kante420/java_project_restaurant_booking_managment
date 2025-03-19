@@ -14,6 +14,7 @@ public class Restaurant extends Table{
         this.totalTables = totalTables + additionalTables;
         this.copy_totalTables = this.totalTables;
         //And creates a Table object for each table slot
+        //tables = new Table [totalTables];
     }
 
     private int copy_totalTables;
@@ -89,15 +90,14 @@ public class Restaurant extends Table{
                         if(tables[i] == null){
                             if(counter < tables_needed){
                                 if(counter == tables_needed-1){
-                                    tables[i].reserve(numberOfPeople, reservationName);
+                                    tables[i].reserve(people_last_table, reservationName);
                                     availableTables -= tables_needed;
                                     currentTableIndex = i+1;
                                     return true;
                                     break
                                 }
-                                tables[i] = 6;
+                                tables[i].reserve(6,reservationName);
                                 counter++;
-
                             }
                         }
                     }

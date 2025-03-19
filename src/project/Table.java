@@ -49,10 +49,10 @@ public class Table {
 
     //To string method
     public String toString(){
-        if(isOccupied==true){
+        if(isOccupied){
             return "Name: " + reservationName + ", Number of Dinners: " + occupiedSeats;
         }
-        else if(isOccupied==false){
+        else{
             return "Available";
         }
     }
