@@ -19,12 +19,6 @@ public class Restaurant extends Table{
         }
     }
 
-
-
-
-
-
-
     //Getters and Setters
     public int getAvailableTables() {
         return availableTables;
