@@ -131,7 +131,7 @@ public class Restaurant extends Table{
 
     //Method to check is there are available tables
     public boolean hasAvailableTables(int numberOfPeople){
-        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+        int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
 
         return tables_needed <= availableTables;
     }
@@ -139,7 +139,7 @@ public class Restaurant extends Table{
     //Available Tables Info Method
     public String availableTablesInfo (int numberOfPeople){
         int num_available_tables = totalTables - (currentTableIndex + 1);
-        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+        int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
         StringBuilder return_string_available = new StringBuilder();
 
         if(tables_needed > num_available_tables){
