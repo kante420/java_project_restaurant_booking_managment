@@ -17,13 +17,15 @@ public class Restaurant extends Table{
         //tables = new Table [totalTables];
     }
 
-    private int copy_totalTables;
+    private final int copy_totalTables;
 
+    /*
     //Inizialization of the Table Array
-    tables = new Table[copy_totalTables];
-    for(int i=0; i<copy_totalTables;i++){
+    tables = new Table[totalTables];
+    for(int i=0; i< copy_totalTables;i++){
         tables[i] = null;
     }
+    */
 
     //Getters and Setters
     public int getAvailableTables() {
@@ -37,9 +39,6 @@ public class Restaurant extends Table{
     }
     public void setCurrentTableIndex(int currentTableIndex) {
         this.currentTableIndex = currentTableIndex;
-    }
-    public String getName() {
-        return name;
     }
     public void setName(String name) {
         this.name = name;
@@ -94,7 +93,7 @@ public class Restaurant extends Table{
                                     availableTables -= tables_needed;
                                     currentTableIndex = i+1;
                                     return true;
-                                    break
+                                    break;
                                 }
                                 tables[i].reserve(6,reservationName);
                                 counter++;
@@ -135,12 +134,12 @@ public class Restaurant extends Table{
 
         for(int i=currentTableIndex; i < copy_totalTables; i++){
             if (i == copy_totalTables - 1){
-                return_string.append(" Table " + (i+1) + " Available")
+                return_string.append(" Table " + (i+1) + " Available");
             }
-            return_string.append(" Table " + (i+1) + " Available / ")
+            return_string.append(" Table " + (i+1) + " Available / ");
         }
 
-        return return_string;
+        return return_string.toString();
     }
 
 
