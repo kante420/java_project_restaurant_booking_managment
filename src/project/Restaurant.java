@@ -78,7 +78,7 @@ public class Restaurant extends Table{
 
     //Method to reserve a table
     public boolean reserveTables(int numberOfPeople, String reservationName) {
-        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
+        int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
 
         if (tables_needed <= availableTables) {
             if (tables_needed <= 1) {
