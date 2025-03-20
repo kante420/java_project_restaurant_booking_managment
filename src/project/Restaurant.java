@@ -121,7 +121,6 @@ public class Restaurant extends Table{
         }
 
         return false;
-
     }
 
     //Get Name Method
@@ -132,7 +131,7 @@ public class Restaurant extends Table{
     //Method to check is there are available tables
     public boolean hasAvailableTables(int numberOfPeople){
         int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
-
+        //Review for case just 1 table and there are only additional_tables
         return tables_needed <= availableTables;
     }
 

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5882faf2-00f8-40b5-82d2-078e240fde93" name="Changes" comment="v2.4 (finish table and restaurant + error correction)">
+    <list default="true" id="5882faf2-00f8-40b5-82d2-078e240fde93" name="Changes" comment="v2.4 (finish table and restaurant + error correction) (Math.ceil added)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Chain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Chain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Restaurant.java" afterDir="false" />
     </list>
+    <list id="d9bab30e-5ce2-4f20-b81a-151780f9ad15" name="Changes by juliiaa21" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,21 +39,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,7 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1742374034719</updated>
       <workItem from="1742374036346" duration="6777000" />
-      <workItem from="1742385231296" duration="71000" />
+      <workItem from="1742385231296" duration="255000" />
+      <workItem from="1742461610092" duration="2817000" />
     </task>
     <task id="LOCAL-00001" summary="v2.3 (error correction)">
       <option name="closed" value="true" />
@@ -103,7 +106,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742385039845</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v2.4 (finish table and restaurant + error correction)">
+      <option name="closed" value="true" />
+      <created>1742385316348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742385316348</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v2.4 (finish table and restaurant + error correction)">
+      <option name="closed" value="true" />
+      <created>1742385401830</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742385401830</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v2.4 (finish table and restaurant + error correction) (Math.ceil added)">
+      <option name="closed" value="true" />
+      <created>1742385433650</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742385433650</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +140,8 @@
     <MESSAGE value="v2.2 (changes in Restaurant &gt; reserveTable() )" />
     <MESSAGE value="v2.3 (error correction)" />
     <MESSAGE value="v2.4 (finish table and restaurant + error correction)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.4 (finish table and restaurant + error correction)" />
+    <MESSAGE value="v2.4 (finish table and restaurant + error correction) (Math.ceil added)" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2.4 (finish table and restaurant + error correction) (Math.ceil added)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
