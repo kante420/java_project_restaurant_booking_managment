@@ -80,6 +80,39 @@ public class Restaurant{
      */
 
     //Method to reserve a table
+    public boolean reserveTables(int numberOfPeople, String reservationName){
+        int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
+        int people_last_table = numberOfPeople - ((tables_needed - 1) * 6);
+        int counter = 0;
+        int copy_currentTableIndex = currentTableIndex;
+
+        if(tables_needed > availableTables || currentTableIndex >= totalTables || numberOfPeople <= 1 || reservationName == null || (tables_needed == 1 && availableTables == additionalTables)){
+            return false;
+        }
+
+        for(int i = copy_currentTableIndex; i<totalTables && counter<tables_needed; i++){
+            if(!tables[i].isOccupied()){
+                if(counter == currentTableIndex-1){
+                    tables[i].reserve(people_last_table, reservationName);
+                }
+                else{
+                    tables[i].reserve(6, reservationName);
+                }
+            }
+            counter++;
+        }
+
+        if(counter == tables_needed){
+            availableTables -= tables_needed;
+            currentTableIndex += tables_needed;
+            return true;
+        }
+
+        return false;
+    }
+
+    /*
+    //Method to reserve a table
     public boolean reserveTables(int numberOfPeople, String reservationName) {
         int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
 
@@ -125,6 +158,8 @@ public class Restaurant{
 
         return false;
     }
+
+     */
 
     //Get Name Method
     public String getName(){

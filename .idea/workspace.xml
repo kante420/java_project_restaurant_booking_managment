@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5882faf2-00f8-40b5-82d2-078e240fde93" name="Changes" comment="v2.5 (Chain class implemented)">
+    <list default="true" id="5882faf2-00f8-40b5-82d2-078e240fde93" name="Changes" comment="v2.5 - Final Version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Chain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Chain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <workItem from="1742374036346" duration="6777000" />
       <workItem from="1742385231296" duration="255000" />
       <workItem from="1742461610092" duration="3911000" />
-      <workItem from="1742476703011" duration="1201000" />
+      <workItem from="1742476703011" duration="3269000" />
     </task>
     <task id="LOCAL-00001" summary="v2.3 (error correction)">
       <option name="closed" value="true" />
@@ -155,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742465487536</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="v2.5 - Final Version">
+      <option name="closed" value="true" />
+      <created>1742477943006</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742477943007</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +173,8 @@
     <MESSAGE value="v2.4 (finish table and restaurant + error correction)" />
     <MESSAGE value="v2.4 (finish table and restaurant + error correction) (Math.ceil added)" />
     <MESSAGE value="v2.5 (Chain class implemented)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.5 (Chain class implemented)" />
+    <MESSAGE value="v2.5 - Final Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2.5 - Final Version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
