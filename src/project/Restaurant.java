@@ -51,34 +51,6 @@ public class Restaurant{
         this.totalTables = totalTables;
     }
 
-    /*
-
-    public boolean reserveTables(int numberOfPeople, String reservationName) {
-        int tables_needed = (numberOfPeople + 6 - 1) / 6; //Rounding up
-
-        if(numberOfPeople <= 1 || tables_needed > availableTables) {
-            return false;
-        }
-
-        else if(currentTableIndex == 5 && tables_needed == 1) {
-            return false;
-        }
-
-        else{
-            if(tables_needed == 1){
-                tables[currentTableIndex].reserve(numberOfPeople, reservationName);
-                availableTables--;
-                currentTableIndex++;
-                return true;
-            }
-            else if(tables_needed >= 2){
-
-            }
-        }
-    }
-
-     */
-
     //Method to reserve a table
     public boolean reserveTables(int numberOfPeople, String reservationName){
         int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
