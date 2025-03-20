@@ -12,12 +12,15 @@ public class Restaurant{
     public Restaurant(String name, int totalTables){
         this.name = name;
         this.totalTables = totalTables + additionalTables;
+        this.availableTables = totalTables;
         //Initialization of the Table Array
         tables = new Table[totalTables];
         for(int i=0; i< totalTables;i++){
-            tables[i] = new Table();
+            tables[i] = null;
         }
     }
+
+
 
     //Getters and Setters
     public int getAvailableTables() {
@@ -85,7 +88,7 @@ public class Restaurant{
                 if (currentTableIndex == 6) {
                     return false;
                 } else {
-                    if (tables[currentTableIndex].getIsOccupied()) {
+                    if (tables[currentTableIndex].isOccupied()) {
                         return false;
                     } else {
                         tables[currentTableIndex].reserve(numberOfPeople, reservationName);
@@ -139,9 +142,13 @@ public class Restaurant{
     public String availableTablesInfo (int numberOfPeople){
         int num_available_tables = totalTables - (currentTableIndex + 1);
         int tables_needed = (int) Math.ceil((double) numberOfPeople /6); //Rounding up
-        StringBuilder return_string_available = new StringBuilder();
 
         if(tables_needed > num_available_tables){
+            return "There are no available tables for your reservation. Sorry!";
+        }
+        else{
+            StringBuilder return_string_available = new StringBuilder();
+
             for(int i=currentTableIndex; i < totalTables; i++){
                 if (i == totalTables - 1){
                     return_string_available.append(" Table ").append(i + 1).append(" Available");
@@ -151,7 +158,7 @@ public class Restaurant{
             return return_string_available.toString();
         }
 
-        return "There are no available tables for your reservation. Sorry!";
+
     }
 
     //To String Method
@@ -160,7 +167,7 @@ public class Restaurant{
 
         for(int i=0; i< totalTables; i++){
             if(i == totalTables - 1){
-                if(tables[i].getIsOccupied()){
+                if(tables[i].isOccupied()){
                     return_string_restaurant.append(" Table ").append(i + 1).append("\n Occupation: Occupied \n");
                     return_string_restaurant.append("Number of dinners: ").append(tables[i].getOccupiedSeats());
                     return_string_restaurant.append("\n Reservation Name: ").append(tables[i].getReservationName());
@@ -172,7 +179,7 @@ public class Restaurant{
                 }
             }
             else{
-                if(tables[i].getIsOccupied()){
+                if(tables[i].isOccupied()){
                     return_string_restaurant.append(" Table ").append(i + 1).append("\n Occupation: Occupied \n");
                     return_string_restaurant.append("Number of dinners: ").append(tables[i].getOccupiedSeats());
                     return_string_restaurant.append("\n Reservation Name: ").append(tables[i].getReservationName());

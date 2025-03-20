@@ -26,12 +26,12 @@ public class Chain {
 
     //Get Restaurant
     public Restaurant getRestaurant(String name){
-        for(int i = 0; i < numberOfRestaurants; i++){
-            if(restaurants[i].getName().equals(name)){
-                return restaurants[i];
-            }
+        if(getRestaurantPosition(name) == -1){
+            return null;
         }
-        return null;
+        else{
+            return restaurants[getRestaurantPosition(name)];
+        }
     }
 
     //Get Restaurant Position
@@ -45,7 +45,7 @@ public class Chain {
     }
 
     //Reserve Restaurant
-    public boolean removeRestaurant(int numberOfPeople, String restaurantName, String reservationName){
+    public boolean reserveRestaurant(int numberOfPeople, String restaurantName, String reservationName){
         Restaurant restaurant = getRestaurant(restaurantName);
 
         if (restaurant == null){
