@@ -1,26 +1,23 @@
 package project;
 
-public class Chain extends Restaurant {
+public class Chain {
     private String chainName;
     private int numberOfRestaurants;
     private Restaurant[] restaurants;
 
-    //Contructor
+    //Constructor
     public Chain(String chainName, int numberOfRestaurants) {
         this.chainName = chainName;
         this.numberOfRestaurants = numberOfRestaurants;
         //Initialization of the Restaurant Array
         restaurants = new Restaurant[numberOfRestaurants];
-        for(int i=0; i < numberOfRestaurants;i++){
-            restaurants[i] = new Restaurant();
-        }
     }
 
     //Add Restaurant
     public boolean addRestaurant(Restaurant restaurant){
         for(int i = 0; i < numberOfRestaurants; i++){
-            if(restaurants[i].getName() == null){
-                restaurants[i].setName(restaurant.getName());
+            if(restaurants[i] == null){
+                restaurants[i] = restaurant;
                 return true;
             }
         }
@@ -66,19 +63,16 @@ public class Chain extends Restaurant {
     public Restaurant searchRestaurant(int numberOfPeople, String restaurantName){
         Restaurant restaurant = getRestaurant(restaurantName);
 
-        if (restaurant == null){
-            return null;
-        }
-        else{
+        if (restaurant != null) {
             int position = getRestaurantPosition(restaurantName);
 
-            for(int i = position; i < numberOfRestaurants; i++){
-                if(restaurants[i].hasAvailableTables(numberOfPeople)){
+            for (int i = position; i < numberOfRestaurants; i++) {
+                if (restaurants[i].hasAvailableTables(numberOfPeople)) {
                     return restaurants[i];
                 }
             }
 
-            return null;
         }
+        return null;
     }
 }

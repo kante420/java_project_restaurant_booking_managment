@@ -1,6 +1,6 @@
 package project;
 
-public class Restaurant extends Table{
+public class Restaurant{
     private final int additionalTables = 2;
     private int availableTables;
     private int currentTableIndex = 0;
